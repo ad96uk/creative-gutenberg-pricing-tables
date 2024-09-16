@@ -1,0 +1,111 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "create-block/trendywp-elegant",
+  "version": "1.0.0",
+  "title": "TrendyWP: Elegant.",
+  "category": "widgets",
+  "icon": "smiley",
+  "description": "Effortlessly design responsive, eye-catching pricing tables with our creative templates.",
+  "example": {},
+  "supports": {
+    "html": false
+  },
+  "textdomain": "trendywp-elegant",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "viewScript": "file:./view.js",
+  "attributes": {
+    "cardTitle1": {
+      "type": "string"
+    },
+    "cardDes1": {
+      "type": "string"
+    },
+    "planNumber1": {
+      "type": "string"
+    },
+    "planNumber2": {
+      "type": "string"
+    },
+    "planName1": {
+      "type": "string"
+    },
+    "planName2": {
+      "type": "string"
+    },
+    "planFeatures1": {
+      "type": "string"
+    },
+    "planFeatures2": {
+      "type": "string"
+    },
+    "planPrice1": {
+      "type": "string"
+    },
+    "planPrice2": {
+      "type": "string"
+    },
+    "btnText1": {
+      "type": "string",
+      "default": "Click me"
+    },
+    "btnURL1": {
+      "type": "string",
+      "default": "#"
+    },
+    "btnText2": {
+      "type": "string",
+      "default": "Click me"
+    },
+    "btnURL2": {
+      "type": "string",
+      "default": "#"
+    },
+    "btnBackgroundColor1": {
+      "type": "string",
+      "default": "#d62246"
+    },
+    "btnTextColor1": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "btnBorderWidth1": {
+      "type": "number",
+      "default": "2"
+    },
+    "btnBorderColor1": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "btnBackgroundColor2": {
+      "type": "string",
+      "default": "#d62246"
+    },
+    "btnTextColor2": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "btnBorderWidth2": {
+      "type": "number",
+      "default": "2"
+    },
+    "btnBorderColor2": {
+      "type": "string",
+      "default": "#ffffff"
+    },
+    "btnBorderRadius1": {
+      "type": "number",
+      "default": "100"
+    },
+    "btnBorderRadius2": {
+      "type": "number",
+      "default": "100"
+    },
+    "isLastBlock": {
+      "type": "boolean",
+      "default": false
+    }
+  }
+}
