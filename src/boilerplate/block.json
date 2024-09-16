@@ -1,0 +1,21 @@
+{
+    "$schema": "https://schemas.wp.org/trunk/block.json",
+    "apiVersion": 3,
+    "name": "create-block/trendywp-murky",
+    "version": "1.0.0",
+    "title": "TrendyWP: Murky.",
+    "category": "widgets",
+    "icon": "smiley",
+    "description": "Effortlessly design responsive, eye-catching pricing tables with our creative templates.",
+    "example": {},
+    "supports": {
+      "html": false
+    },
+    "textdomain": "trendywp-murky",
+    "editorScript": "file:./index.js",
+    "editorStyle": "file:./index.css",
+    "style": "file:./style-index.css",
+    "viewScript": "file:./view.js",
+    "attributes": {}
+  }
+  
