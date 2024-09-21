@@ -26,20 +26,29 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
-const defaultImages = {
-  topImage1: "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image1.jpg",
-  topImage2: "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image2.jpg",
-  topImage3: "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image3.jpg",
-  middleImage: "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg",
-  bottomImage: "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg"
+const handleChange = (attributeName, setAttributes) => value => {
+  setAttributes({
+    [attributeName]: value
+  });
 };
 const PricingCard = ({
+  setAttributes,
+  index,
   topImage,
   middleImage,
   bottomImage,
   topImageWidth,
   middleImageWidth,
-  bottomImageWidth
+  bottomImageWidth,
+  buttonClass,
+  planName,
+  planDesc,
+  planPrice,
+  btnLabel,
+  subDesc,
+  featureDesc,
+  btnURL,
+  btnText
 }) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
   className: "pricing-card-1 card-gradient",
   children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
@@ -55,67 +64,52 @@ const PricingCard = ({
             width: topImageWidth ? `${topImageWidth}px` : "auto"
           }
         })
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-        className: "btn-label",
-        children: "Save 65%"
+      }), (index === 1 || index === 2) && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+        value: btnLabel || "",
+        placeholder: "save 65%",
+        onChange: handleChange(`btnLabel${index + 1}`, setAttributes),
+        className: "btn-label"
       })]
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h3", {
-      children: "Personal"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-      children: "For individuals who want to securely connect personal devices, for free."
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("h4", {
-      children: "Free"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+      tagName: "h3",
+      value: planName,
+      onChange: handleChange(`planName${index + 1}`, setAttributes),
+      placeholder: "Plan Name",
+      className: "plan-name"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+      tagName: "p",
+      value: planDesc,
+      onChange: handleChange(`planDesc${index + 1}`, setAttributes),
+      placeholder: "For individuals who want to securely connect personal devices, for free.s",
+      className: "plan-description"
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+      tagName: "h4",
+      value: planPrice,
+      onChange: handleChange(`planPrice${index + 1}`, setAttributes),
+      placeholder: "Price",
+      className: "plan-price"
     })]
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
     className: "middle-section",
-    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("ul", {
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          className: "img-icon",
-          src: middleImage,
-          style: {
-            width: middleImageWidth ? `${middleImageWidth}px` : "auto"
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          children: "Feature descriptional 1"
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("ul", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
+        children: ["  ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+          tagName: "p",
+          value: featureDesc,
+          onChange: handleChange(`featureDesc${index + 1}`, setAttributes),
+          placeholder: "Feature description",
+          className: "feature-description"
         })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          className: "img-icon",
-          src: middleImage,
-          style: {
-            width: middleImageWidth ? `${middleImageWidth}px` : "auto"
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          children: "Feature descriptional 1"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          className: "img-icon",
-          src: middleImage,
-          style: {
-            width: middleImageWidth ? `${middleImageWidth}px` : "auto"
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          children: "Feature descriptional 1"
-        })]
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("li", {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
-          className: "img-icon",
-          src: middleImage,
-          style: {
-            width: middleImageWidth ? `${middleImageWidth}px` : "auto"
-          }
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("p", {
-          children: "Feature descriptional 1"
-        })]
-      })]
+      })
     })
   }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     className: "bottom-section",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
-      className: "btn",
-      children: "Try Now"
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("a", {
+      href: btnURL,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("button", {
+        className: buttonClass,
+        children: btnText
+      })
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("span", {
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("img", {
         className: "img-icon",
@@ -123,7 +117,13 @@ const PricingCard = ({
         style: {
           width: bottomImageWidth ? `${bottomImageWidth}px` : "auto"
         }
-      }), "sub-description"]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+        tagName: "span",
+        value: subDesc,
+        onChange: handleChange(`subDesc${index + 1}`, setAttributes),
+        placeholder: "Sub-description",
+        className: "sub-description"
+      })]
     })]
   })]
 });
@@ -132,6 +132,31 @@ function Edit({
   setAttributes
 }) {
   const {
+    cnt,
+    planName1,
+    planDesc1,
+    planPrice1,
+    btnLabel1,
+    btnText1,
+    subDesc1,
+    featureDesc1,
+    planName2,
+    planDesc2,
+    planPrice2,
+    btnLabel2,
+    btnText2,
+    subDesc2,
+    featureDesc2,
+    planName3,
+    planDesc3,
+    planPrice3,
+    btnLabel3,
+    btnText3,
+    subDesc3,
+    featureDesc3,
+    btnURL1,
+    btnURL2,
+    btnURL3,
     cards
   } = attributes;
   const onSelectImage = (index, section) => media => {
@@ -150,8 +175,56 @@ function Edit({
   };
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
     ...(0,_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.useBlockProps)(),
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
-      children: cards.map((card, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.InspectorControls, {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Settings №1", "namespace"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Text", "namespace"),
+          value: btnText1,
+          onChange: value => setAttributes({
+            btnText1: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button URL", "namespace"),
+          value: btnURL1,
+          onChange: value => setAttributes({
+            btnURL1: value
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Settings №2", "namespace"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Text", "namespace"),
+          value: btnText2,
+          onChange: value => setAttributes({
+            btnText2: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button URL", "namespace"),
+          value: btnURL2,
+          onChange: value => setAttributes({
+            btnURL2: value
+          })
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
+        title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Settings №3", "namespace"),
+        initialOpen: false,
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button Text", "namespace"),
+          value: btnText3,
+          onChange: value => setAttributes({
+            btnText3: value
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.TextControl, {
+          label: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Button URL", "namespace"),
+          value: btnURL3,
+          onChange: value => setAttributes({
+            btnURL3: value
+          })
+        })]
+      }), cards.map((card, index) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
         title: (0,_wordpress_i18n__WEBPACK_IMPORTED_MODULE_0__.__)("Card " + (index + 1) + " Image Settings", "textdomain"),
         initialOpen: false,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)(_wordpress_components__WEBPACK_IMPORTED_MODULE_2__.PanelBody, {
@@ -230,46 +303,83 @@ function Edit({
             max: 500
           })]
         })]
-      }, index))
+      }, index))]
     }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
       className: "pricing-container gradient",
       children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "card-wrapper",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PricingCard, {
+          setAttributes: setAttributes,
+          index: 0,
           topImage: cards[0].topImage,
           middleImage: cards[0].middleImage,
           bottomImage: cards[0].bottomImage,
           topImageWidth: cards[0].topImageWidth,
           middleImageWidth: cards[0].middleImageWidth,
-          bottomImageWidth: cards[0].bottomImageWidth
+          bottomImageWidth: cards[0].bottomImageWidth,
+          buttonClass: "btn",
+          planName: planName1,
+          planDesc: planDesc1,
+          planPrice: planPrice1,
+          btnLabel: btnLabel1,
+          btnText: btnText1 || "Try now",
+          subDesc: subDesc1,
+          featureDesc: featureDesc1,
+          btnURL: btnURL1
         })
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
         className: "active active-bg ",
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsxs)("div", {
           className: "cnt",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
-            children: "Best Deal"
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_1__.RichText, {
+            value: cnt,
+            placeholder: "Best Deal",
+            onChange: handleChange("cnt", setAttributes),
+            className: "cnt",
+            tagName: "span"
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("span", {
             className: "arrow",
             children: "\u2935"
           })]
-        }), " ", /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PricingCard, {
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PricingCard, {
+          setAttributes: setAttributes,
+          index: 1,
           topImage: cards[1].topImage,
           middleImage: cards[1].middleImage,
           bottomImage: cards[1].bottomImage,
           topImageWidth: cards[1].topImageWidth,
           middleImageWidth: cards[1].middleImageWidth,
-          bottomImageWidth: cards[1].bottomImageWidth
+          bottomImageWidth: cards[1].bottomImageWidth,
+          buttonClass: "try-now-active",
+          planName: planName2,
+          planDesc: planDesc2,
+          planPrice: planPrice2,
+          btnLabel: btnLabel2,
+          btnText: btnText2 || "Try now",
+          subDesc: subDesc2,
+          featureDesc: featureDesc2,
+          btnURL: btnURL2
         })]
       }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)("div", {
         className: "card-wrapper",
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_4__.jsx)(PricingCard, {
+          setAttributes: setAttributes,
+          index: 2,
           topImage: cards[2].topImage,
           middleImage: cards[2].middleImage,
           bottomImage: cards[2].bottomImage,
           topImageWidth: cards[2].topImageWidth,
           middleImageWidth: cards[2].middleImageWidth,
-          bottomImageWidth: cards[2].bottomImageWidth
+          bottomImageWidth: cards[2].bottomImageWidth,
+          buttonClass: "btn",
+          planName: planName3,
+          planDesc: planDesc3,
+          planPrice: planPrice3,
+          btnLabel: btnLabel3,
+          btnText: btnText3 || "Try now",
+          subDesc: subDesc3,
+          featureDesc: featureDesc3,
+          btnURL: btnURL3
         })
       })]
     })]
@@ -327,7 +437,7 @@ __webpack_require__.r(__webpack_exports__);
   /**
    * @see ./save.js
    */
-  Save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
+  save: _save__WEBPACK_IMPORTED_MODULE_3__["default"]
 });
 
 /***/ }),
@@ -340,26 +450,201 @@ __webpack_require__.r(__webpack_exports__);
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ Save)
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @wordpress/block-editor */ "@wordpress/block-editor");
 /* harmony import */ var _wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react/jsx-runtime */ "react/jsx-runtime");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__);
 
 
-
-function Save({
+const PricingCard = ({
+  topImage,
+  middleImage,
+  bottomImage,
+  topImageWidth,
+  middleImageWidth,
+  bottomImageWidth,
+  buttonClass,
+  planName,
+  planDesc,
+  planPrice,
+  btnLabel,
+  sunDesc,
+  featureDesc,
+  btnURL,
+  btnText
+}) => /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+  className: "pricing-card-1 card-gradient",
+  children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "top-section",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "top-section-top",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "circle-icon",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+          className: "img-icon",
+          src: topImage,
+          style: {
+            width: topImageWidth ? `${topImageWidth}px` : 'auto'
+          },
+          alt: "Top Image"
+        })
+      }), btnLabel && /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "btn-label",
+        children: btnLabel
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h3", {
+      className: "plan-name",
+      children: planName
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+      className: "plan-description",
+      children: planDesc
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("h4", {
+      className: "plan-price",
+      children: planPrice
+    })]
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+    className: "middle-section",
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("ul", {
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("li", {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("p", {
+          className: "feature-description",
+          children: featureDesc
+        })
+      })
+    })
+  }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+    className: "bottom-section",
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("a", {
+      href: btnURL,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("button", {
+        className: buttonClass,
+        children: btnText
+      })
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("span", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("img", {
+        className: "img-icon",
+        src: bottomImage,
+        style: {
+          width: bottomImageWidth ? `${bottomImageWidth}px` : 'auto'
+        },
+        alt: "Bottom Image"
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+        className: "sub-description",
+        children: sunDesc
+      })]
+    })]
+  })]
+});
+const Save = ({
   attributes
-}) {
-  const {} = attributes;
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {
+}) => {
+  const {
+    cnt,
+    planName1,
+    planDesc1,
+    planPrice1,
+    btnLabel1,
+    btnText1,
+    subDesc1,
+    featureDesc1,
+    planName2,
+    planDesc2,
+    planPrice2,
+    btnLabel2,
+    btnText2,
+    subDesc2,
+    featureDesc2,
+    planName3,
+    planDesc3,
+    planPrice3,
+    btnLabel3,
+    btnText3,
+    subDesc3,
+    featureDesc3,
+    btnURL1,
+    btnURL2,
+    btnURL3,
+    cards
+  } = attributes;
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
     ..._wordpress_block_editor__WEBPACK_IMPORTED_MODULE_0__.useBlockProps.save(),
-    children: "Save"
+    children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+      className: "pricing-container gradient",
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "card-wrapper",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(PricingCard, {
+          index: 0,
+          topImage: cards[0].topImage,
+          middleImage: cards[0].middleImage,
+          bottomImage: cards[0].bottomImage,
+          topImageWidth: cards[0].topImageWidth,
+          middleImageWidth: cards[0].middleImageWidth,
+          bottomImageWidth: cards[0].bottomImageWidth,
+          buttonClass: "btn",
+          planName: planName1,
+          planDesc: planDesc1,
+          planPrice: planPrice1,
+          btnLabel: btnLabel1,
+          btnText: btnText1 || 'Try now',
+          sunDesc: subDesc1,
+          featureDesc: featureDesc1,
+          btnURL: btnURL1
+        })
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+        className: "active active-bg",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsxs)("div", {
+          className: "cnt",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            children: cnt || 'Best Deal'
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("span", {
+            className: "arrow",
+            children: "\u2935"
+          })]
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(PricingCard, {
+          index: 1,
+          topImage: cards[1].topImage,
+          middleImage: cards[1].middleImage,
+          bottomImage: cards[1].bottomImage,
+          topImageWidth: cards[1].topImageWidth,
+          middleImageWidth: cards[1].middleImageWidth,
+          bottomImageWidth: cards[1].bottomImageWidth,
+          buttonClass: "try-now-active",
+          planName: planName2,
+          planDesc: planDesc2,
+          planPrice: planPrice2,
+          btnLabel: btnLabel2,
+          btnText: btnText2 || 'Try now',
+          sunDesc: subDesc2,
+          featureDesc: featureDesc2,
+          btnURL: btnURL2
+        })]
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)("div", {
+        className: "card-wrapper",
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_1__.jsx)(PricingCard, {
+          index: 2,
+          topImage: cards[2].topImage,
+          middleImage: cards[2].middleImage,
+          bottomImage: cards[2].bottomImage,
+          topImageWidth: cards[2].topImageWidth,
+          middleImageWidth: cards[2].middleImageWidth,
+          bottomImageWidth: cards[2].bottomImageWidth,
+          buttonClass: "btn",
+          planName: planName3,
+          planDesc: planDesc3,
+          planPrice: planPrice3,
+          btnLabel: btnLabel3,
+          btnText: btnText3 || 'Try now',
+          sunDesc: subDesc3,
+          featureDesc: featureDesc3,
+          btnURL: btnURL3
+        })
+      })]
+    })
   });
-}
+};
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Save);
 
 /***/ }),
 
@@ -384,16 +669,6 @@ __webpack_require__.r(__webpack_exports__);
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
-
-/***/ }),
-
-/***/ "react":
-/*!************************!*\
-  !*** external "React" ***!
-  \************************/
-/***/ ((module) => {
-
-module.exports = window["React"];
 
 /***/ }),
 
@@ -453,7 +728,7 @@ module.exports = window["wp"]["i18n"];
   \******************************/
 /***/ ((module) => {
 
-module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/trendywp-murky","version":"1.0.0","title":"TrendyWP: Murky.","category":"widgets","icon":"smiley","description":"Effortlessly design responsive, eye-catching pricing tables with our creative templates.","example":{},"supports":{"html":false},"textdomain":"trendywp-murky","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"cards":{"type":"array","default":[{"topImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image1.jpg","middleImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg","bottomImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg","topImageWidth":15,"middleImageWidth":15,"bottomImageWidth":15},{"topImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image2.jpg","middleImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg","bottomImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg","topImageWidth":15,"middleImageWidth":15,"bottomImageWidth":15},{"topImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image3.jpg","middleImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg","bottomImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg","topImageWidth":15,"middleImageWidth":15,"bottomImageWidth":15}]}}}');
+module.exports = /*#__PURE__*/JSON.parse('{"$schema":"https://schemas.wp.org/trunk/block.json","apiVersion":3,"name":"create-block/trendywp-murky","version":"1.0.0","title":"TrendyWP: Murky.","category":"widgets","icon":"smiley","description":"Effortlessly design responsive, eye-catching pricing tables with our creative templates.","example":{},"supports":{"html":false},"textdomain":"trendywp-murky","editorScript":"file:./index.js","editorStyle":"file:./index.css","style":"file:./style-index.css","viewScript":"file:./view.js","attributes":{"cards":{"type":"array","default":[{"topImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image1.jpg","middleImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg","bottomImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg","topImageWidth":15,"middleImageWidth":15,"bottomImageWidth":15},{"topImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image2.jpg","middleImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg","bottomImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg","topImageWidth":15,"middleImageWidth":15,"bottomImageWidth":15},{"topImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image3.jpg","middleImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg","bottomImage":"/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg","topImageWidth":15,"middleImageWidth":15,"bottomImageWidth":15}]},"planName1":{"type":"string"},"planName2":{"type":"string"},"planName3":{"type":"string"},"planDesc1":{"type":"string"},"planDesc2":{"type":"string"},"planDesc3":{"type":"string"},"planPrice1":{"type":"string"},"planPrice2":{"type":"string"},"planPrice3":{"type":"string"},"btnLabel1":{"type":"string"},"btnLabel2":{"type":"string"},"btnLabel3":{"type":"string"},"btnText1":{"type":"string","default":"Try now"},"btnText2":{"type":"string","default":"Try now"},"btnText3":{"type":"string","default":"Try now"},"subDesc1":{"type":"string"},"subDesc2":{"type":"string"},"subDesc3":{"type":"string"},"cnt":{"type":"string"},"featureDesc1":{"type":"string"},"featureDesc2":{"type":"string"},"featureDesc3":{"type":"string"},"btnURL1":{"type":"string","default":"#"},"btnURL2":{"type":"string","default":"#"},"btnURL3":{"type":"string","default":"#"}}}');
 
 /***/ })
 

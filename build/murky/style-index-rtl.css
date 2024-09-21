@@ -37,6 +37,7 @@
 
 .active {
   display: flex;
+  width: 33%;
   flex-direction: column;
   background: white;
   border-radius: 20px;
@@ -53,6 +54,7 @@
 .card-wrapper {
   display: flex;
   flex-direction: column;
+  width: 33%;
   border-radius: 20px;
 }
 
@@ -130,6 +132,16 @@
   border-radius: 50px;
   padding: 7px 14px;
   color: #fdfdfb;
+  background-image: linear-gradient(-45deg, hsl(204, 85%, 36%) 0%, hsl(205, 69%, 41%) 8%, hsl(205, 60%, 45%) 17%, hsl(204, 53%, 48%) 25%, hsl(204, 51%, 52%) 33%, hsl(203, 54%, 56%) 42%, hsl(203, 56%, 59%) 50%, hsl(202, 59%, 63%) 58%, hsl(201, 62%, 67%) 67%, hsl(201, 66%, 70%) 75%, hsl(200, 72%, 74%) 83%, hsl(199, 79%, 78%) 92%, hsl(198, 89%, 82%) 100%);
+}
+
+.try-now-active {
+  width: 100%;
+  text-align: center;
+  color: #fdfdfb;
+  border: none;
+  border-radius: 50px;
+  padding: 10px;
   background-image: linear-gradient(-45deg, hsl(204, 85%, 36%) 0%, hsl(205, 69%, 41%) 8%, hsl(205, 60%, 45%) 17%, hsl(204, 53%, 48%) 25%, hsl(204, 51%, 52%) 33%, hsl(203, 54%, 56%) 42%, hsl(203, 56%, 59%) 50%, hsl(202, 59%, 63%) 58%, hsl(201, 62%, 67%) 67%, hsl(201, 66%, 70%) 75%, hsl(200, 72%, 74%) 83%, hsl(199, 79%, 78%) 92%, hsl(198, 89%, 82%) 100%);
 }
 

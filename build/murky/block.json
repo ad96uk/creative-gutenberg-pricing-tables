@@ -45,6 +45,87 @@
           "bottomImageWidth": 15
         }
       ]
+    },
+    "planName1": {
+      "type": "string"
+    },
+    "planName2": {
+      "type": "string"
+    },
+    "planName3": {
+      "type": "string"
+    },
+    "planDesc1": {
+      "type": "string"
+    },
+    "planDesc2": {
+      "type": "string"
+    },
+    "planDesc3": {
+      "type": "string"
+    },
+    "planPrice1": {
+      "type": "string"
+    },
+    "planPrice2": {
+      "type": "string"
+    },
+    "planPrice3": {
+      "type": "string"
+    },
+    "btnLabel1": {
+      "type": "string"
+    },
+    "btnLabel2": {
+      "type": "string"
+    },
+    "btnLabel3": {
+      "type": "string"
+    },
+    "btnText1": {
+      "type": "string",
+      "default": "Try now"
+    },
+    "btnText2": {
+      "type": "string",
+      "default": "Try now"
+    },
+    "btnText3": {
+      "type": "string",
+      "default": "Try now"
+    },
+    "subDesc1": {
+      "type": "string"
+    },
+    "subDesc2": {
+      "type": "string"
+    },
+    "subDesc3": {
+      "type": "string"
+    },
+    "cnt": {
+      "type": "string"
+    },
+    "featureDesc1": {
+      "type": "string"
+    },
+    "featureDesc2": {
+      "type": "string"
+    },
+    "featureDesc3": {
+      "type": "string"
+    },
+    "btnURL1": {
+      "type": "string",
+      "default": "#"
+    },
+    "btnURL2": {
+      "type": "string",
+      "default": "#"
+    },
+    "btnURL3": {
+      "type": "string",
+      "default": "#"
     }
   }
 }

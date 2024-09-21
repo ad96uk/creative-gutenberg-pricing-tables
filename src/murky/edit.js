@@ -4,30 +4,33 @@ import {
   InspectorControls,
   MediaUpload,
   MediaUploadCheck,
+  RichText,
 } from "@wordpress/block-editor";
-import { PanelBody, Button, RangeControl } from "@wordpress/components";
+import { PanelBody, Button, RangeControl, TextControl } from "@wordpress/components";
 import "./editor.scss";
 
-const defaultImages = {
-  topImage1:
-    "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image1.jpg",
-  topImage2:
-    "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image2.jpg",
-  topImage3:
-    "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-top-image3.jpg",
-  middleImage:
-    "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-middle-image.jpg",
-  bottomImage:
-    "/wp-content/plugins/trendywp-pricing-tables-library/assets/images/default-bottom-image.jpg",
+const handleChange = (attributeName, setAttributes) => (value) => {
+  setAttributes({ [attributeName]: value });
 };
 
 const PricingCard = ({
+  setAttributes,
+  index,
   topImage,
   middleImage,
   bottomImage,
   topImageWidth,
   middleImageWidth,
   bottomImageWidth,
+  buttonClass,
+  planName,
+  planDesc,
+  planPrice,
+  btnLabel,
+  subDesc,
+  featureDesc,
+  btnURL,
+  btnText,
 }) => (
   <div className="pricing-card-1 card-gradient">
     <div className="top-section">
@@ -39,74 +42,101 @@ const PricingCard = ({
             style={{ width: topImageWidth ? `${topImageWidth}px` : "auto" }}
           />
         </span>
-        <button className="btn-label">Save 65%</button>
+        {(index === 1 || index === 2) && (
+          <RichText
+            value={btnLabel || ""}
+            placeholder="save 65%"
+            onChange={handleChange(`btnLabel${index + 1}`, setAttributes)}
+            className="btn-label"
+          />
+        )}
       </div>
-      <h3>Personal</h3>
-      <p>
-        For individuals who want to securely connect personal devices, for free.
-      </p>
-      <h4>Free</h4>
+      <RichText
+        tagName="h3"
+        value={planName}
+        onChange={handleChange(`planName${index + 1}`, setAttributes)}
+        placeholder={"Plan Name"}
+        className="plan-name"
+      />
+      <RichText
+        tagName="p"
+        value={planDesc}
+        onChange={handleChange(`planDesc${index + 1}`, setAttributes)}
+        placeholder={
+          "For individuals who want to securely connect personal devices, for free.s"
+        }
+        className="plan-description"
+      />
+      <RichText
+        tagName="h4"
+        value={planPrice}
+        onChange={handleChange(`planPrice${index + 1}`, setAttributes)}
+        placeholder={"Price"}
+        className="plan-price"
+      />
     </div>
     <div className="middle-section">
       <ul>
-        <li>
-          <img
-            className="img-icon"
-            src={middleImage}
-            style={{
-              width: middleImageWidth ? `${middleImageWidth}px` : "auto",
-            }}
-          />
-          <p>Feature descriptional 1</p>
-        </li>
-        <li>
-          <img
-            className="img-icon"
-            src={middleImage}
-            style={{
-              width: middleImageWidth ? `${middleImageWidth}px` : "auto",
-            }}
-          />
-          <p>Feature descriptional 1</p>
-        </li>
-        <li>
-          <img
-            className="img-icon"
-            src={middleImage}
-            style={{
-              width: middleImageWidth ? `${middleImageWidth}px` : "auto",
-            }}
-          />
-          <p>Feature descriptional 1</p>
-        </li>
-        <li>
-          <img
-            className="img-icon"
-            src={middleImage}
-            style={{
-              width: middleImageWidth ? `${middleImageWidth}px` : "auto",
-            }}
-          />
-          <p>Feature descriptional 1</p>
-        </li>
+        <li>  <RichText
+              tagName="p"
+              value={featureDesc}
+              onChange={handleChange(`featureDesc${index + 1}`, setAttributes)}
+              placeholder={"Feature description"}
+              className="feature-description"
+            /></li>
       </ul>
     </div>
     <div className="bottom-section">
-      <button className="btn">Try Now</button>
+      <a href={btnURL}>
+        <button className={buttonClass}>{btnText}</button>
+      </a>
       <span>
-        <img
+      <img
           className="img-icon"
           src={bottomImage}
           style={{ width: bottomImageWidth ? `${bottomImageWidth}px` : "auto" }}
         />
-        sub-description
+        <RichText
+          tagName="span"
+          value={subDesc}
+          onChange={handleChange(`subDesc${index + 1}`, setAttributes)}
+          placeholder={"Sub-description"}
+          className="sub-description"
+        />
       </span>
     </div>
   </div>
 );
 
 export default function Edit({ attributes, setAttributes }) {
-  const { cards } = attributes;
+  const {
+    cnt,
+    planName1,
+    planDesc1,
+    planPrice1,
+    btnLabel1,
+    btnText1,
+    subDesc1,
+    featureDesc1,
+    planName2,
+    planDesc2,
+    planPrice2,
+    btnLabel2,
+    btnText2,
+    subDesc2,
+    featureDesc2,
+    planName3,
+    planDesc3,
+    planPrice3,
+    btnLabel3,
+    btnText3,
+    subDesc3,
+    featureDesc3,
+    btnURL1,
+    btnURL2,
+    btnURL3,
+    cards,
+  } = attributes;
 
   const onSelectImage = (index, section) => (media) => {
     const updatedCards = [...cards];
@@ -123,6 +153,54 @@ export default function Edit({ attributes, setAttributes }) {
   return (
     <div {...useBlockProps()}>
       <InspectorControls>
+      <PanelBody
+          title={__("Button Settings №1", "namespace")}
+          initialOpen={false}
+        >
+          <TextControl
+            label={__("Button Text", "namespace")}
+            value={btnText1}
+            onChange={(value) => setAttributes({ btnText1: value })}
+          />
+          <TextControl
+            label={__("Button URL", "namespace")}
+            value={btnURL1}
+            onChange={(value) => setAttributes({ btnURL1: value })}
+          />
+        </PanelBody>
+        
+        <PanelBody
+          title={__("Button Settings №2", "namespace")}
+          initialOpen={false}
+        >
+          <TextControl
+            label={__("Button Text", "namespace")}
+            value={btnText2}
+            onChange={(value) => setAttributes({ btnText2: value })}
+          />
+          <TextControl
+            label={__("Button URL", "namespace")}
+            value={btnURL2}
+            onChange={(value) => setAttributes({ btnURL2: value })}
+          />
+        </PanelBody>
+        
+        <PanelBody
+          title={__("Button Settings №3", "namespace")}
+          initialOpen={false}
+        >
+          <TextControl
+            label={__("Button Text", "namespace")}
+            value={btnText3}
+            onChange={(value) => setAttributes({ btnText3: value })}
+          />
+          <TextControl
+            label={__("Button URL", "namespace")}
+            value={btnURL3}
+            onChange={(value) => setAttributes({ btnURL3: value })}
+          />
+        </PanelBody>
+
         {cards.map((card, index) => (
           <PanelBody
             title={__("Card " + (index + 1) + " Image Settings", "textdomain")}
@@ -238,36 +316,75 @@ export default function Edit({ attributes, setAttributes }) {
       <div className="pricing-container gradient">
         <div className="card-wrapper">
           <PricingCard
+            setAttributes={setAttributes}
+            index={0}
             topImage={cards[0].topImage}
             middleImage={cards[0].middleImage}
             bottomImage={cards[0].bottomImage}
             topImageWidth={cards[0].topImageWidth}
             middleImageWidth={cards[0].middleImageWidth}
             bottomImageWidth={cards[0].bottomImageWidth}
+            buttonClass="btn"
+            planName={planName1}
+            planDesc={planDesc1}
+            planPrice={planPrice1}
+            btnLabel={btnLabel1}
+            btnText={btnText1 || "Try now"}
+            subDesc={subDesc1}
+            featureDesc={featureDesc1}
+            btnURL={btnURL1}
           />
         </div>
         <div className="active active-bg ">
           <div className="cnt">
-            <span>Best Deal</span>
+            <RichText
+              value={cnt}
+              placeholder="Best Deal"
+              onChange={handleChange("cnt", setAttributes)}
+              className="cnt"
+              tagName="span"
+            />
             <span className="arrow">&#x2935;</span>
-          </div>{" "}
+          </div>
           <PricingCard
+            setAttributes={setAttributes}
+            index={1}
             topImage={cards[1].topImage}
             middleImage={cards[1].middleImage}
             bottomImage={cards[1].bottomImage}
             topImageWidth={cards[1].topImageWidth}
             middleImageWidth={cards[1].middleImageWidth}
             bottomImageWidth={cards[1].bottomImageWidth}
+            buttonClass="try-now-active"
+            planName={planName2}
+            planDesc={planDesc2}
+            planPrice={planPrice2}
+            btnLabel={btnLabel2}
+            btnText={btnText2 || "Try now"}
+            subDesc={subDesc2}
+            featureDesc={featureDesc2}
+            btnURL={btnURL2}
           />
         </div>
         <div className="card-wrapper">
           <PricingCard
+            setAttributes={setAttributes}
+            index={2}
             topImage={cards[2].topImage}
             middleImage={cards[2].middleImage}
             bottomImage={cards[2].bottomImage}
             topImageWidth={cards[2].topImageWidth}
             middleImageWidth={cards[2].middleImageWidth}
             bottomImageWidth={cards[2].bottomImageWidth}
+            buttonClass="btn"
+            planName={planName3}
+            planDesc={planDesc3}
+            planPrice={planPrice3}
+            btnLabel={btnLabel3}
+            btnText={btnText3 || "Try now"}
+            subDesc={subDesc3}
+            featureDesc={featureDesc3}
+            btnURL={btnURL3}
           />
         </div>
       </div>
